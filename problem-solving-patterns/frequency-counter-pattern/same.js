@@ -3,6 +3,7 @@
 /* 
     -this pattern uses objects or sets to collect values/frequencies of values
     - usually avoid he need for nested loops O(n^2)
+    - used when two inputs are given and you want to compare them
 */
 
 // O(n^2)
