@@ -1,0 +1,334 @@
+
+{
+  "header": {
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20190916.212536.7723.0.001.json",
+    "dumpEventTime": "2019-09-16T21:25:36Z",
+    "dumpEventTimeStamp": "1568665536078",
+    "processId": 7723,
+    "cwd": "/home/msimou/Desktop/projects/javascript-algorithms-and-data-structures-masterclass/javascript-algorithms-and-data-structures",
+    "commandLine": [
+      "/home/msimou/.nvm/versions/node/v11.15.0/bin/node",
+      "-r",
+      "/home/msimou/.vscode/extensions/wallabyjs.quokka-vscode-1.0.247/dist/wallaby/node_modules/esm",
+      "/home/msimou/.vscode/extensions/wallabyjs.quokka-vscode-1.0.247/dist/wallaby/server.js",
+      "runner",
+      "0",
+      "34827",
+      "quokka@1.0.0",
+      "",
+      "/home/msimou/Desktop/projects/javascript-algorithms-and-data-structures-masterclass/javascript-algorithms-and-data-structures/node_modules",
+      "quokka_fake_path/original",
+      ""
+    ],
+    "nodejsVersion": "v11.15.0",
+    "glibcVersionRuntime": "2.23",
+    "glibcVersionCompiler": "2.12",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "linux",
+    "componentVersions": {
+      "node": "11.15.0",
+      "v8": "7.0.276.38-node.19",
+      "uv": "1.27.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "67",
+      "nghttp2": "1.37.0",
+      "napi": "4",
+      "llhttp": "1.1.1",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1b",
+      "cldr": "34.0",
+      "icu": "63.1",
+      "tz": "2018e",
+      "unicode": "11.0"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v11.15.0/node-v11.15.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v11.15.0/node-v11.15.0.tar.gz"
+    },
+    "osName": "Linux",
+    "osRelease": "4.15.0-60-generic",
+    "osVersion": "#67~16.04.1-Ubuntu SMP Mon Aug 26 08:57:33 UTC 2019",
+    "osMachine": "x86_64",
+    "host": "msimou-satellite"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x0000000000a702fd",
+      "symbol": "report::TriggerNodeReport(v8::Isolate*, node::Environment*, char const*, char const*, std::string const&, v8::Local<v8::String>) [/home/msimou/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x000000000095ccb3",
+      "symbol": "node::OnFatalError(char const*, char const*) [/home/msimou/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000b3dbde",
+      "symbol": "v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, bool) [/home/msimou/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000b3de14",
+      "symbol": "v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, bool) [/home/msimou/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f3ce52",
+      "symbol": " [/home/msimou/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f3cf58",
+      "symbol": "v8::internal::Heap::CheckIneffectiveMarkCompact(unsigned long, double) [/home/msimou/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f49678",
+      "symbol": "v8::internal::Heap::PerformGarbageCollection(v8::internal::GarbageCollector, v8::GCCallbackFlags) [/home/msimou/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f4a18b",
+      "symbol": "v8::internal::Heap::CollectGarbage(v8::internal::AllocationSpace, v8::internal::GarbageCollectionReason, v8::GCCallbackFlags) [/home/msimou/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f4cec1",
+      "symbol": "v8::internal::Heap::AllocateRawWithRetryOrFail(int, v8::internal::AllocationSpace, v8::internal::AllocationAlignment) [/home/msimou/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x0000000000f170f4",
+      "symbol": "v8::internal::Factory::NewFillerObject(int, bool, v8::internal::AllocationSpace) [/home/msimou/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x00000000011cd3fe",
+      "symbol": "v8::internal::Runtime_AllocateInNewSpace(int, v8::internal::Object**, v8::internal::Isolate*) [/home/msimou/.nvm/versions/node/v11.15.0/bin/node]"
+    },
+    {
+      "pc": "0x00001230db4cfc5d",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 1494413312,
+    "totalCommittedMemory": 1492236752,
+    "usedMemory": 1461775592,
+    "availableMemory": 34097432,
+    "memoryLimit": 1526909922,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 524288,
+        "committedMemory": 42224,
+        "capacity": 515584,
+        "used": 33520,
+        "available": 482064
+      },
+      "new_space": {
+        "memorySize": 2097152,
+        "committedMemory": 1241608,
+        "capacity": 1031168,
+        "used": 175672,
+        "available": 855496
+      },
+      "old_space": {
+        "memorySize": 1447759872,
+        "committedMemory": 1447193320,
+        "capacity": 1421890512,
+        "used": 1421435280,
+        "available": 455232
+      },
+      "code_space": {
+        "memorySize": 1572864,
+        "committedMemory": 1537056,
+        "capacity": 947264,
+        "used": 947264,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 3682304,
+        "committedMemory": 3445712,
+        "capacity": 1775360,
+        "used": 1775360,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 38776832,
+        "committedMemory": 38776832,
+        "capacity": 69713136,
+        "used": 37408496,
+        "available": 32304640
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 0,
+        "used": 0,
+        "available": 0
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 64.0972,
+    "kernelCpuSeconds": 1.2263,
+    "cpuConsumptionPercent": 114.603,
+    "maxRss": 1609265152,
+    "pageFaults": {
+      "IORequired": 10,
+      "IONotRequired": 520071
+    },
+    "fsActivity": {
+      "reads": 1848,
+      "writes": 0
+    }
+  },
+  "uvthreadResourceUsage": {
+    "userCpuSeconds": 27.5284,
+    "kernelCpuSeconds": 0.486734,
+    "cpuConsumptionPercent": 49.1494,
+    "fsActivity": {
+      "reads": 1848,
+      "writes": 0
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "USER": "msimou",
+    "LANGUAGE": "en_GB:en",
+    "XDG_SEAT": "seat0",
+    "XDG_SESSION_TYPE": "x11",
+    "SSH_AGENT_PID": "2875",
+    "SHLVL": "1",
+    "HOME": "/home/msimou",
+    "QT4_IM_MODULE": "xim",
+    "DESKTOP_SESSION": "cairo-dock",
+    "QT_LINUX_ACCESSIBILITY_ALWAYS_ON": "1",
+    "GTK_MODULES": "gail:atk-bridge",
+    "XDG_SEAT_PATH": "/org/freedesktop/DisplayManager/Seat0",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:abstract=/tmp/dbus-CupzPHYwq7,guid=cf08d29ef1fe2f03dc8a89b95d7fe04c",
+    "QT_QPA_PLATFORMTHEME": "appmenu-qt5",
+    "MANDATORY_PATH": "/usr/share/gconf/cairo-dock.mandatory.path",
+    "LOGNAME": "msimou",
+    "GTK_IM_MODULE": "ibus",
+    "DEFAULTS_PATH": "/usr/share/gconf/cairo-dock.default.path",
+    "XDG_SESSION_ID": "c2",
+    "GTK2_MODULES": "overlay-scrollbar",
+    "PATH": "/home/msimou/bin:/home/msimou/.local/bin:/home/msimou/.nvm/versions/node/v11.15.0/bin:/home/msimou/bin:/home/msimou/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/go/bin:/usr/local/bin:/usr/bin",
+    "GDM_LANG": "en_GB",
+    "XDG_SESSION_PATH": "/org/freedesktop/DisplayManager/Session0",
+    "XDG_RUNTIME_DIR": "/run/user/1000",
+    "DISPLAY": ":0",
+    "LANG": "en_GB.UTF-8",
+    "XDG_CURRENT_DESKTOP": "Unity",
+    "XMODIFIERS": "@im=ibus",
+    "XDG_SESSION_DESKTOP": "cairo-dock",
+    "XAUTHORITY": "/home/msimou/.Xauthority",
+    "XDG_GREETER_DATA_DIR": "/var/lib/lightdm-data/msimou",
+    "SSH_AUTH_SOCK": "/run/user/1000/keyring/ssh",
+    "SHELL": "/bin/bash",
+    "QT_ACCESSIBILITY": "1",
+    "GDMSESSION": "cairo-dock",
+    "XDG_VTNR": "7",
+    "QT_IM_MODULE": "ibus",
+    "PWD": "/home/msimou/Desktop/projects/javascript-algorithms-and-data-structures-masterclass/javascript-algorithms-and-data-structures",
+    "CLUTTER_IM_MODULE": "xim",
+    "XDG_CONFIG_DIRS": "/etc/xdg/xdg-cairo-dock:/etc/xdg",
+    "XDG_DATA_DIRS": "/usr/share/cairo-dock:/usr/share/gnome:/usr/local/share/:/usr/share/",
+    "GNOME_DESKTOP_SESSION_ID": "this-is-deprecated",
+    "XDG_MENU_PREFIX": "gnome-",
+    "SESSION_MANAGER": "local/msimou-satellite:@/tmp/.ICE-unix/2809,unix/msimou-satellite:/tmp/.ICE-unix/2809",
+    "DESKTOP_AUTOSTART_ID": "1071f9fde1276f765e156866158054667400000028090004",
+    "GIO_LAUNCHED_DESKTOP_FILE": "/usr/share/applications/code.desktop",
+    "GIO_LAUNCHED_DESKTOP_FILE_PID": "5165",
+    "GDK_BACKEND": "x11",
+    "VSCODE_IPC_HOOK": "/run/user/1000/vscode-6a731119-1.35.1-main.sock",
+    "VSCODE_NLS_CONFIG": "{\"locale\":\"en-gb\",\"availableLanguages\":{},\"_languagePackSupport\":true}",
+    "VSCODE_LOGS": "/home/msimou/.config/Code/logs/20190916T202317",
+    "CHROME_DESKTOP": "code-url-handler.desktop",
+    "DOMAIN": "http://coredatascience.ddns.net",
+    "GMAIL_PWD": "!core_data_science!",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "LS_COLORS": "",
+    "NO_AT_BRIDGE": "1",
+    "NVM_BIN": "/home/msimou/.nvm/versions/node/v11.15.0/bin",
+    "NVM_CD_FLAGS": "",
+    "NVM_DIR": "/home/msimou/.nvm",
+    "URI_CDS_MONGO": "mongodb://cdsSYSADMIN:b21cda25fb3e30a994ffa5f3f619108597d4ada3ba32354c13a8f7e9e531@localhost:27000/cds",
+    "URI_CDS_REDIS": "redis://SYSADMIN:426a82cbceb1de94a63467844589726354f368cd126fa48174028c29392a@localhost:29000",
+    "USER_GMAIL": "datasciencecore@gmail.com",
+    "VSCODE_NODE_CACHED_DATA_DIR": "/home/msimou/.config/Code/CachedData/c7d83e57cd18f18026a8162d042843bda1bcf21f",
+    "VSCODE_PID": "5165",
+    "_": "/usr/share/code/code",
+    "AMD_ENTRYPOINT": "vs/workbench/services/extensions/node/extensionHostProcess",
+    "PIPE_LOGGING": "true",
+    "VERBOSE_LOGGING": "true",
+    "VSCODE_IPC_HOOK_EXTHOST": "/tmp/vscode-ipc-d7517fda-4a3f-4723-ae3a-59785f73afa2.sock",
+    "VSCODE_HANDLES_UNCAUGHT_ERRORS": "true",
+    "VSCODE_LOG_STACK": "false",
+    "VSCODE_PREVENT_FOREIGN_INSPECT": "true",
+    "APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL": "true",
+    "WALLABY_PRODUCTION": "true",
+    "WALLABY_USE_WSL": "false",
+    "DEBUG_COLORS": "no",
+    "quokka": "{\"globalConfigFile\":\"/home/msimou/.quokka/config.json\",\"tempDir\":\"/home/msimou/.quokka/data/3bzoa\",\"pro\":false,\"plugins\":[\"jsdom-quokka-plugin\"],\"stdEsm\":true}",
+    "undefined": "",
+    "ESM_OPTIONS": "{\"await\":true}"
+  },
+  "userLimits": {
+    "core_file_size_blocks": {
+      "soft": 0,
+      "hard": "unlimited"
+    },
+    "data_seg_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "file_size_blocks": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_locked_memory_bytes": {
+      "soft": 65536,
+      "hard": 65536
+    },
+    "max_memory_size_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "open_files": {
+      "soft": 1048576,
+      "hard": 1048576
+    },
+    "stack_size_bytes": {
+      "soft": 8388608,
+      "hard": "unlimited"
+    },
+    "cpu_time_seconds": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    },
+    "max_user_processes": {
+      "soft": 63591,
+      "hard": 63591
+    },
+    "virtual_memory_kbytes": {
+      "soft": "unlimited",
+      "hard": "unlimited"
+    }
+  },
+  "sharedObjects": [
+    "/lib/x86_64-linux-gnu/libdl.so.2",
+    "/lib/x86_64-linux-gnu/librt.so.1",
+    "/usr/lib/x86_64-linux-gnu/libstdc++.so.6",
+    "/lib/x86_64-linux-gnu/libm.so.6",
+    "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+    "/lib/x86_64-linux-gnu/libpthread.so.0",
+    "/lib/x86_64-linux-gnu/libc.so.6",
+    "/lib64/ld-linux-x86-64.so.2"
+  ]
+}
