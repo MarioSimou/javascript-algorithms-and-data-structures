@@ -1,115 +1,149 @@
 class Node {
-    constructor( val ){
-        this.val = val
-        this.next = null
-    }
+  constructor(val){
+    this.val = val
+    this.next = null
+  }
 }
 
+class SinglyLinkedList {
+  constructor(){
+    this.head = null
+    this.tail = null
+    this.length = 0
+  }
 
-class SinglyLinkedList{
-    constructor(){
-        this.head = null
-        this.tail = null
-        this.length = 0
+  push(val){
+    if(!this.head) return this._addToEmptyList(val)
+
+    const oldTail = this.tail
+    const newTail = new Node(val)
+    oldTail.next = newTail
+    this.tail = newTail
+    this.length++
+
+    return newTail
+  }
+  pop(){
+    if(!this.tail) return null
+    if(this.length === 1 )  return this._resetNode()
+
+    const oldTail = this.tail
+    const newTail = this.get(this.length - 2 )
+    newTail.next = null
+    this.tail = newTail
+    this.length--
+
+    return oldTail
+  }
+  shift(){
+    if(!this.head) return null
+
+    const oldHead = this.head
+    const newHead = oldHead.next
+    this.head = newHead
+    this.length--
+
+    return oldHead
+  }
+  unshift(val){
+    if(!this.head) return this._addToEmptyList(val)
+
+    const oldHead = this.head
+    const newHead = new Node(val)
+    newHead.next = oldHead
+    this.head = newHead
+    this.length++
+
+    return newHead
+  }
+
+  get(index){
+    const n = this.length - 1 
+    if( index < 0 || index > n) return null
+    if(index === 0) return this.head
+    if(index === n) return this.tail
+
+    let counter = 0
+    let node = this.head
+    while(node.next){
+      if(counter === index) return node
+
+      counter++
+      node = node.next
+    }
+  }
+  insert(index, val){
+    const n = this.length - 1
+    if(index > n || n < 0) throw new Error('out of bound')
+    if(index === 0) return this.unshift(val)
+
+    const node = new Node(val)
+    const prevNode = this.get(index -1 )
+    const nextNode = this.get(index)
+    prevNode.next = node
+    node.next = nextNode
+    this.length++
+
+    return node
+  }
+
+  remove(index){
+    const n = this.length - 1
+    if( index > n || index < 0) throw new Error('out of bound')
+    if( index === 0) return this.shift()
+    if(index === n ) return this.pop()
+
+    const prevNode = this.get(index - 1)
+    const removed = this.get(index)
+    prevNode.next = removed.next
+    this.length--
+
+    return removed
+  }
+
+  reverse(){
+    const newTail = this.head
+    let curNode = this.head
+    let prevNode = null, tempNode
+    for(let i =0; i < this.length; i++){
+      curNode = curNode.next
+      prevNode = curNode
+      if( i === 0 ) prevNode.next = null
+
+      tempNode = curNode.next
+
+      console.log('PREVIOUS NODE: ', prevNode)
+      console.log('CURRENT NODE: ', curNode)
+      console.log('TEMP NODE: ', tempNode )
     }
 
-    unshift(val){
-        const node = new Node(val)
+    newTail.next = null
+    this.head = prevNode
+    this.tail = newTail
+    return this
+  }
 
-        if(this.length)  node.next = this.head
-        else this.tail = node
+  _addToEmptyList(val){
+    const node = new Node(val)
+    this.head = node
+    this.tail = node
+    this.length++
+    return node
+  }
+  _resetNode(){
+      const node = this.head || this.tail
+      this.head = null
+      this.tail = null
+      this.length--
+      
+      return node
+  }
 
-        this.head = node
-        this.length++
-
-        return node
-    }
-
-    push(val){
-        const node = new Node(val)
-
-        if(this.length) this.tail.next = node
-        else this.head = node
-
-        this.tail = node
-        this.length++
-
-        return node
-    }
-
-    set(val,index){
-        if(index > this.length ) throw new Error('index out of bound')
-        if(index === 0) return this.addHead(val)
-        
-        let node = this.head
-        let counter = 1
-        while( node.next ){
-            console.log(counter)
-            if( counter === index ){
-                console.log(counter)
-                const newNode = new Node(val)
-                newNode.next = node.next
-                node.next = newNode
-                this.length++
-                return
-            }
-
-            counter++
-            node = node.next
-        }
-    }
-
-    search(index){
-        if( index > this.length ) throw new Error('index out of bound')
-        if( index === 0 ) return this.head
-
-        let node = this.head
-        let counter = 1
-        while(node.next){
-            if(index === counter ) return node.next
-
-            counter++
-            node = node.next
-        }
-    }
-
-    pop(){
-        if(!this.length) throw new Error('no existing nodes')
-
-        const node = this.search(this.length - 2) // one before the end
-        console.log(node)
-        node.next = null
-
-        const tail = this.tail
-        this.tail = node
-        this.length--
-        return tail
-    }
-    shift(){
-        if(!this.length) throw new Error('no existing nodes')
-        const head = this.head
-        this.head = head.next
-        this.length--
-        return head
-    }
-
-    get node(){
-        return this.head
-    }
 }
 
-const list = new SinglyLinkedList()
-list.push('john')
-list.push('some')
-list.unshift('bye')
-list.push('moorning')
-list.set('test',1)
+const linkedList = new SinglyLinkedList()
 
-console.log(list.head)
-console.log(list.tail)
-console.log(list.length)
-console.log(list.head.next.next)
-
-console.log(list.pop())
-console.log(list.tail)
-console.log(list.length)
+linkedList.unshift('today')
+linkedList.push('is')
+linkedList.push('Friday')
+console.log(linkedList.reverse())
