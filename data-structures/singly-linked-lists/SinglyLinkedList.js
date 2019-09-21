@@ -102,24 +102,19 @@ class SinglyLinkedList {
   }
 
   reverse(){
-    const newTail = this.head
-    let curNode = this.head
-    let prevNode = null, tempNode
-    for(let i =0; i < this.length; i++){
-      curNode = curNode.next
-      prevNode = curNode
-      if( i === 0 ) prevNode.next = null
+    let node = this.head
+    this.head = this.tail
+    this.tail = node
 
-      tempNode = curNode.next
+    let next
+    let prev = null
+    for(let i = 0; i < this.length; i++){
+      next = node.next
+      node.next = prev
+      prev = node
+      node = next      
+    }    
 
-      console.log('PREVIOUS NODE: ', prevNode)
-      console.log('CURRENT NODE: ', curNode)
-      console.log('TEMP NODE: ', tempNode )
-    }
-
-    newTail.next = null
-    this.head = prevNode
-    this.tail = newTail
     return this
   }
 
