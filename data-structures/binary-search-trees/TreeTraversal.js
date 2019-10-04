@@ -84,34 +84,70 @@ BinarySearchTree.prototype.find = function(val){
   return helper(this.root, val)
 }
 
-BinarySearchTree.prototype.breathFirstSearch = function(){
+BinarySearchTree.prototype.breadthFirstSearch = function(){
+  if(!this.root) return null
+  
+  const queue = new Queue()
+  const visited = new Array()
+  queue.enqueue(this.root)
+
+  let node
+  while((node = queue.dequeue())){
+    visited.push(node.val)
+    if(node.left) queue.enqueue(node.left)
+    if(node.right) queue.enqueue(node.right)
+  }
+  return visited
+}
+
+BinarySearchTree.prototype.depthFirstPreOrder = function(){
   if(!this.root) return []
 
-  const visited = new Queue()
-  const queue = new Queue()
-  queue.enqueue(this.root) 
-
-  while(queue.size){
-    const first = queue.dequeue()
-    visited.enqueue(first.val)
-
-    if(first.left){
-      queue.enqueue(first.left)
-    }
-    if(first.right){
-      queue.enqueue(first.right)
-    }
+  function traverse(node, list){
+    list.push(node.val) // preOrder
+    if(node.left) traverse(node.left, list)
+    if(node.right) traverse(node.right, list)
+    return list
   }
-
-  const list = []
-  let node = visited.start
-  while(true){
-    list.push(node.val)
-    if(!node.next) break
-    node = node.next
-  }
-  return list
+  return traverse(this.root, [])
 }
+
+BinarySearchTree.prototype.depthFirstPostOrder = function(){
+  if(!this.root) return []
+
+  function traverse(node,list){
+    if(node.left) traverse(node.left, list)
+    if(node.right) traverse(node.right, list)
+    list.push(node.val) // postOrder
+    return list
+  }
+  return traverse(this.root,[])
+}
+
+BinarySearchTree.prototype.depthFirstIntOrder = function(){
+  if(!this.root) return []
+
+  function traverse(node,list){
+    if(node.left) traverse(node.left, list)
+    list.push(node.val) // in order
+    if(node.right) traverse(node.right, list)
+    return list
+  }
+  return traverse(this.root,[])
+}
+
+
+/*
+     10
+  6     15
+3   8     20
+*/
+
+/*
+  Tree traversal:
+  1) Breadth First Search -   moving horizontally
+  2) Depth First Preorder - moving vertically
+*/
 
 const bst = new BinarySearchTree()
 bst.insert(10)
@@ -120,5 +156,5 @@ bst.insert(3)
 bst.insert(8)
 bst.insert(15)
 bst.insert(20)
-
-console.log(bst.breathFirstSearch())
+// console.log(bst.breadthFirstSearch())
+console.log(bst.depthFirstIntOrder())
